@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px solid red; */
+}
+
+.container{ 
+    margin: 1%;
+}
+
+h2{
+    padding: 2%;
+    background-color: gray;
+    outline: 2px solid black;
+}
+
+h3{
+    margin-top: 2% !important;
+}

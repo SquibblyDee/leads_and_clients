@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Leads and Clients</title>
+        <!-- linking a css style sheet -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+        <!-- Linking Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- linking a javascript file -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Report Dashboard</h2>
+            <h3><u>List of all customers and # of leads</u></h3>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Number of Leads</th>
+                </tr>
+                {% for row in query %}
+                    <tr>
+                    {% for d in row %}
+                        <td>{{ row[d] }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+            <div id="chartContainer" style="height: 370px; width: 80%;"></div>
+            <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+            <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        </div>
+    </body>
+</html>
