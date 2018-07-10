@@ -1,12 +1,3 @@
-THIS ONE WORKS!!!!!!!!!
-SELECT leads.leads_id, CONCAT(clients.first_name, ' ', clients.last_name) AS client_name, COUNT(*) as count
-FROM leads
-JOIN sites ON leads.site_id = sites.site_id
-JOIN clients ON sites.client_id = clients.client_id
-GROUP BY client_name
-ORDER BY count
-
-
 To concatanate all these stupid tables together
 SELECT CONCAT(clients.first_name, ' ', clients.last_name) AS client_name, domain_name FROM leads JOIN sites ON sites.site_id = leads.site_id JOIN clients ON clients.client_id = sites.client_id GROUP BY domain_name ORDER BY client_name
  

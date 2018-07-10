@@ -9,7 +9,7 @@ mysql = connectToMySQL('lead_gen_business')
 
 @app.route('/')
 def index():
-    query = mysql.query_db("SELECT CONCAT(clients.first_name, ' ', clients.last_name) AS client_name, COUNT(*) as count FROM leads JOIN sites ON leads.site_id = sites.site_id JOIN clients ON sites.client_id = clients.client_id GROUP BY client_name ORDER BY count")
+    query = mysql.query_db("SELECT CONCAT(clients.first_name, ' ', clients.last_name) AS label, COUNT(*) as y FROM leads JOIN sites ON leads.site_id = sites.site_id JOIN clients ON sites.client_id = clients.client_id GROUP BY label ORDER BY y")
     # print("Fetched all the stuff", query, "\n")
     return render_template('index.html', query = query)
 
